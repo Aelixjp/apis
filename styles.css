@@ -1,0 +1,75 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1
+{
+    text-align: center;
+    margin: 15px auto;
+}
+
+.contenido
+{
+    display: block;
+    text-align: justify;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.justified{
+    text-align: justify;
+    word-break: break-word;
+    word-wrap: break-word;
+    display: block;
+    white-space: pre-line;
+}
+
+button{
+    margin: 15px auto;
+}
+
+.cont-apis{
+    padding: 25px;
+}
+
+capi
+{
+    display: block;
+}
+
+api-title
+{
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: underline;
+    margin: 15px 0px;
+}
+
+.giff_title
+{
+    margin: 30px auto 10px auto;
+}
+
+.form-conv{
+    margin: 20px auto;
+}
+
+.form-section{
+    margin: 15px auto;
+}
+
+.sel2{
+    padding: 10px;
+    min-width: 150px;
+}
+
+capi{
+    margin-bottom: 40px;
+}
+
+.valor_conv{
+    padding: 12px;
+}

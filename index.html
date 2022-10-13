@@ -7,7 +7,12 @@
 
         <title>Tree API</title>
         <link rel="stylesheet" href="styles.css">
-        <script src="main.js"></script>
+        <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhc73uEL5bGueCX8C78XpSp7Q2zoZJkFA&callback=initMap"></script>-->
+        
+        <!--<script
+            src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAhc73uEL5bGueCX8C78XpSp7Q2zoZJkFA&callback=initMap&v=weekly"
+            defer
+        ></script>-->
     </head>
 
     <body>
@@ -42,44 +47,16 @@
                 <button id = "random_giff">Get random</button>
             </capi>
 
-            <!-- API de FrankFurter -->
+            <!-- API de Google Maps -->
             <capi>
-                <api-title>API de Frankfurter</api-title>
+                <api-title>API de Google Maps</api-title>
 
-                <form action = "" class = "form-conv">
-                    <!-- Convertir de -->
-                    <div class = "form-section">
-                        <label for = "from_conv">Convertir de:</label>
-                        <select name = "from_conv" id = "from_conv" class = "sel2">
-                            <option value = "COP">COP</option>
-                            <option value = "USD">USD</option>
-                            <option value = "CNY">CNY</option>
-                            <option value = "GBP">GBP</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Convertir hacia -->
-                    <div class="form-section">
-                        <label for = "to_conv">A:</label>
-                        <select name = "to_conv" id = "to_conv" class = "sel2">
-                            <option value = "COP">COP</option>
-                            <option value = "USD">USD</option>
-                            <option value = "CNY">CNY</option>
-                            <option value = "GBP">GBP</option>
-                        </select>
-                    </div>
-
-                    <!-- Valor de la conversion -->
-                    <div class="form-section">
-                        <label for = "">Valor Conversion:</label>
-                        <input id = "valor_conv" class = "valor_conv" type = "text">
-                    </div>
-
-                    <div class="form-section">
-                        <button id = "convertir-moneda" type="button">Convertir</button>
-                    </div>
-                </form>
+                <div id ="map"></div>
             </capi>
         </aside>
     </body>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhc73uEL5bGueCX8C78XpSp7Q2zoZJkFA&callback=initMap&v=weekly" defer>
+    </script>
+    <script src="main.js"></script>
 </html>

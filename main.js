@@ -1,3 +1,12 @@
+let map;
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: {lat: 43.5293101, lng: -5.6773233},
+        zoom: 13
+    });
+}
+
 window.onload = () =>
 {
     const synth       = window.speechSynthesis;
@@ -7,14 +16,11 @@ window.onload = () =>
     const giff        = document.getElementById("giff"            );
     const giff_title  = document.getElementById("giff_title"      );
     const random_giff = document.getElementById("random_giff"     );
-    const valor_conv  = document.getElementById("valor_conv"      );
-    const conv_moneda = document.getElementById("convertir-moneda");
-    const from_conv   = document.getElementById("from_conv"       );
-    const to_conv     = document.getElementById("to_conv"         ); 
 
     //API KEY NASA API
-    const NASA_KEY  = "7tFOOnPd86nNyytsMp7PTRwfvvt7NxisulBcD55c";
-    const GIPHY_KEY = "DJTZrZ7QqYooY6fNGFzroi24zb8xF8V1";
+    const NASA_KEY            = "7tFOOnPd86nNyytsMp7PTRwfvvt7NxisulBcD55c";
+    const GIPHY_KEY           = "DJTZrZ7QqYooY6fNGFzroi24zb8xF8V1";
+    const GOOGLE_MAPS_API_KEY = "AIzaSyAhc73uEL5bGueCX8C78XpSp7Q2zoZJkFA";
 
     /*async function getNasaData()
     {
@@ -35,24 +41,6 @@ window.onload = () =>
         synth.speak(utterThis);
     }
 
-    function moneyConversion()
-    {
-        const host   = 'api.frankfurter.app';
-        const amount = parseFloat(valor_conv.value.trim());
-
-        const from = from_conv.options[from_conv.selectedIndex]["value"];
-        const to   = to_conv.options[to_conv.selectedIndex]["value"];
-
-        if(!Number.isNaN(amount))
-        {
-            fetch(`https://${host}/latest?amount=${amount}&from=${from}&to=${to}`)
-            .then(resp => resp.json())
-            .then((data) => {
-                alert(`${amount} ${from} = ${data.rates.USD} ${to}`);
-            });
-        }
-    }
-
     async function showGiff()
     {
         const giff_g = await getGiff();
@@ -69,13 +57,18 @@ window.onload = () =>
     {
         escuchar.onclick = leerTexto;
         random_giff.onclick = showGiff;
-        conv_moneda.onclick = moneyConversion;
     }
 
     function setup()
     {
         addListeners();
         showGiff();
+
+        const marker = new google.maps.Marker({
+            position: {lat: 43.542194, lng: -5.676875},
+            map: map,
+            title: 'Acuario de Gijón'
+        });
     }
 
     setup();

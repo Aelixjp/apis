@@ -1,11 +1,4 @@
-let map;
-
-function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-        center: {lat: 43.5293101, lng: -5.6773233},
-        zoom: 13
-    });
-}
+import WebGLRenderer from "./classes/WebGLRenderer.js";
 
 window.onload = () =>
 {
@@ -16,11 +9,11 @@ window.onload = () =>
     const giff        = document.getElementById("giff"            );
     const giff_title  = document.getElementById("giff_title"      );
     const random_giff = document.getElementById("random_giff"     );
+    const canvas      = document.getElementById("web-gl"          );
 
     //API KEY NASA API
     const NASA_KEY            = "7tFOOnPd86nNyytsMp7PTRwfvvt7NxisulBcD55c";
     const GIPHY_KEY           = "DJTZrZ7QqYooY6fNGFzroi24zb8xF8V1";
-    const GOOGLE_MAPS_API_KEY = "AIzaSyAhc73uEL5bGueCX8C78XpSp7Q2zoZJkFA";
 
     /*async function getNasaData()
     {
@@ -55,20 +48,17 @@ window.onload = () =>
 
     function addListeners()
     {
-        escuchar.onclick = leerTexto;
+        escuchar.onclick    = leerTexto;
         random_giff.onclick = showGiff;
     }
 
     function setup()
     {
+        const glRenderer = new WebGLRenderer(canvas);
+              glRenderer.main();
+
         addListeners();
         showGiff();
-
-        const marker = new google.maps.Marker({
-            position: {lat: 43.542194, lng: -5.676875},
-            map: map,
-            title: 'Acuario de Gijón'
-        });
     }
 
     setup();

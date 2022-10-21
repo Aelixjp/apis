@@ -7,12 +7,12 @@
 
         <title>Tree API</title>
         <link rel="stylesheet" href="styles.css">
-        <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhc73uEL5bGueCX8C78XpSp7Q2zoZJkFA&callback=initMap"></script>-->
-        
-        <!--<script
-            src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAhc73uEL5bGueCX8C78XpSp7Q2zoZJkFA&callback=initMap&v=weekly"
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
+            integrity="sha512-zhHQR0/H5SEBL3Wn6yYSaTTZej12z0hVZKOv3TwCUXT1z5qeqGcXJLLrbERYRScEDDpYIJhPC1fk31gqR783iQ=="
+            crossorigin="anonymous"
             defer
-        ></script>-->
+        ></script>
     </head>
 
     <body>
@@ -49,14 +49,12 @@
 
             <!-- API de Google Maps -->
             <capi>
-                <api-title>API de Google Maps</api-title>
-
-                <div id ="map"></div>
+                <api-title>API de Web GL</api-title>
+                
+                <canvas id="web-gl" width="640" height="480">Elemento canvas no soportado!</canvas>
             </capi>
         </aside>
     </body>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhc73uEL5bGueCX8C78XpSp7Q2zoZJkFA&callback=initMap&v=weekly" defer>
-    </script>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
 </html>
